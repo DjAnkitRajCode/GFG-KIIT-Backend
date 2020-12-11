@@ -1,0 +1,14 @@
+<%- include('partials/header') %>
+<div class="container">
+    <div id="box">
+        <h1 class="text-dark"><i>Create Event</i></h1>
+        <form action="/admin/event/create" method="POST"  role="form" enctype="multipart/form-data">
+            <input type="text" name="title" class="form-control mt-3" placeholder="Event Title">
+            <textarea cols="30" rows="10" name="text" class="form-control mt-3" placeholder="write about event here"></textarea>
+            <input type="file" name="file" class="form-control mt-3" >
+            <input type="submit" value="Create" class="btn btn-warning mt-3">
+        </form>
+    </div>
+</div>
+<%- include('partials/footer') %>
+

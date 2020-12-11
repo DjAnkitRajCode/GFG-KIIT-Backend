@@ -1,0 +1,13 @@
+<%- include('partials/header') %>
+<form action="/admin/member/<%= member._id %>?_method=PUT" method="POST"  role="form" enctype="multipart/form-data">
+    <input type="text" name="name" value="<%= member.name %>" placeholder="Name">
+    <input type="email" name="email" value="<%= member.email %>" placeholder="Email">
+    <input type="text" name="git" value="<%= member.git %>" placeholder="Git-Hub">
+    <input type="text" name="insta" value="<%= member.insta %>" placeholder="Instagram">
+    <input type="text" name="twitter" value="<%= member.twitter %>" placeholder="Twitter">
+    <input type="text" name="linkedin" value="<%= member.linkedin %>" placeholder="LinkedIn">
+    <img src="/uploads/<%= member.image %>" alt="" width="100" height="100">
+    <input type="file" name="file">
+    <input type="submit" value="Update">
+</form>
+<%- include('partials/footer') %>

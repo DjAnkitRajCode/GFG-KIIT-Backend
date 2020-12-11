@@ -1,0 +1,44 @@
+<%- include('partials/header') %>
+
+<H1 class="text-danger">Events</H1>
+    <% for(var i=0;i<event.length ;i++){ %>
+        <% if(i == event.length-1){ %>
+    <table>
+        <tr>
+            <td><img src="/uploads/<%= event[i].image %>" alt="" width="100px" height="100px"></td>
+            <td><%= event[i].title %></td>
+            <td><%= event[i].text %></td>
+            <td><a href="/admin/event/<%= event[i].id %>/edit">edit</a></td>
+            <td>
+                <form action="/delete/<%= event.id %>?_method=DELETE" method="POST">
+                    <button>Delete</button>
+                </form>
+            </td>
+        </tr>
+    </table>
+<% }; %>
+<% }; %>
+
+
+<H1 class="text-danger">MEMBERS</H1>
+<% member.forEach(function(member){ %>
+    <table>
+        <tr>
+            <td><img src="/uploads/<%= member.image %>" alt="" width="100px" height="100px"></td>
+            <td><%= member.name %></td>
+            <td><%= member.email %></td>
+            <td><a href="<%= member.insta %>">Instagram</a></td>
+            <td><a href="<%= member.git %>">Git-Hub</a></td>
+            <td><a href="<%= member.linkedin %>">Linked In</a></td>
+            <td><a href="<%= member.twitter %>">Twitter</a></td>
+            <td><a href="/admin/member/<%= member.id %>/edit">edit</a></td>
+            <td>
+                <form action="/delete/member/<%= member.id %>?_method=DELETE" method="POST">
+                    <button>Delete</button>
+                </form>
+            </td>
+        </tr>
+    </table>
+<% }); %>
+
+<%- include('partials/footer') %>

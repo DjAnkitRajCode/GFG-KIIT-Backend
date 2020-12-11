@@ -1,0 +1,16 @@
+<%- include('partials/header') %>
+<div class="container">
+    <div id="box">
+        <form action="/admin/member/create" method="POST"  role="form" enctype="multipart/form-data">
+            <input type="text" name="name" placeholder="Name" class="form-control mt-3">
+            <input type="email" name="email" placeholder="Email" class="form-control mt-3">
+            <input type="text" name="git" placeholder="Git-Hub" class="form-control mt-3">
+            <input type="text" name="insta" placeholder="Instagram" class="form-control mt-3">
+            <input type="text" name="twitter" placeholder="Twitter" class="form-control mt-3">
+            <input type="text" name="linkedin" placeholder="LinkedIn" class="form-control mt-3">
+            <input type="file" name="file" class="form-control mt-3">
+            <input type="submit" value="SignUp" class="btn btn-warning mt-3">
+        </form>
+    </div>
+</div>
+<%- include('partials/footer') %>

@@ -1,0 +1,23 @@
+<%- include('partials/header') %>
+<H1 class="text-center text-warning">EVENTS</H1>
+<div class="container">
+    <div class="row">
+        <% events.forEach(function(event){ %>
+        <div class="col-4">
+            <div class="card" style="width: 100%; height: 520px;">
+                <img src="/uploads/<%= event.image %>" class="card-img-top" height="250px">
+                <div class="card-body">
+                    <h5 class="card-title"><%= event.title %></h5>
+                    <p class="card-text"><%= event.text %></p>
+                    <form action="/delete/<%= event.id %>?_method=DELETE" method="POST">
+                        <button class="btn btn-outline-danger float-right">Delete</button>
+                    </form>
+                    <a href="/admin/event/<%= event.id %>/edit" class="btn btn-outline-primary float-right mr-3">Edit</a>
+                </div>
+            </div>
+        </div>
+        <% }); %>
+    </div>
+</div>
+<%- include('partials/footer') %>
+

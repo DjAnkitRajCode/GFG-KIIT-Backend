@@ -1,0 +1,9 @@
+<%- include('partials/header') %>
+<form action="/admin/event/<%= events._id %>?_method=PUT" method="POST"  role="form" enctype="multipart/form-data">
+    <input type="text" name="title" value="<%= events.title %>" placeholder="Event Title">
+    <textarea cols="30" rows="10" name="text" placeholder="write about event here"><%= events.text %></textarea>
+    <img src="/uploads/<%= events.image %>" alt="" width="100" height="100">
+    <input type="file" name="file">
+    <input type="submit" value="update">
+</form>
+<%- include('partials/footer') %>
